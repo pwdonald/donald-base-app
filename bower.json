@@ -1,0 +1,22 @@
+{
+  "name": "Donald's Base Express App",
+  "version": "0.0.1",
+  "homepage": "https://github.com/pwdonald/donald-base-app",
+  "authors": [
+    "Donald Jones <jones.donald@gmail.com>"
+  ],
+  "description": "Base App for quick prototyping.",
+  "main": "app.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Bootflat": "~2.0.2"
+  }
+}
