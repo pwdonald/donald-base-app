@@ -19,6 +19,8 @@
   },
   "devDependencies": {
     "grunt-nodemon": "latest",
-    "grunt-contrib-watch": "latest"
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-concurrent": "latest"
   }
 }
