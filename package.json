@@ -1,5 +1,5 @@
 {
-  "name": "Donald's Base Express App",
+  "name": "donald-base-express-app",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -21,6 +21,8 @@
     "grunt-nodemon": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-contrib-less": "latest",
-    "grunt-concurrent": "latest"
+    "grunt-concurrent": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-bowercopy": "latest"
   }
 }

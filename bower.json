@@ -17,6 +17,6 @@
     "tests"
   ],
   "dependencies": {
-    "Bootflat": "~2.0.2"
+    "bootstrap": "latest"
   }
 }
