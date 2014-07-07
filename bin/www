@@ -2,6 +2,7 @@
 var debug = require('debug')('donaldjones14');
 var app = require('../app');
 
+app.set('title', 'Donald\'s Base App');
 app.set('port', process.env.PORT || 3000);
 
 var server = app.listen(app.get('port'), function() {

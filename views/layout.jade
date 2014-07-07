@@ -16,10 +16,9 @@ html
           a(class="navbar-brand", href="#")= title
         div.collapse.navbar-collapse
           ul.nav.navbar-nav
-            li(class=(activeNum===0 ? 'active' : '')) 
-              a(href="#") Home
-            li(class=(activeNum===1 ? 'active' : '')) 
-              a(href="#") About
+            each item in navitems
+              li(class=(item.active ? 'active' : '')) 
+                a(href=item.url)= item.title
     block content
     script(src='/lib/jquery/jquery.min.js')
     script(src='/lib/bootstrap/js/bootstrap.min.js')

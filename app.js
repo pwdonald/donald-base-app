@@ -4,11 +4,17 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+//models
+var NavItem = require('./models/navitem');
+
 var app = express();
+
+mongoose.connect('mongodb://localhost/baseapp');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -20,6 +26,19 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('*', function(req, res, next) {
+    var navitems = NavItem.find(function(err, navitems) {
+        for (var item in navitems) {
+            if (navitems[item].url === req.url) {
+                navitems[item].active = true;
+            }
+        }
+        app.locals.navitems = navitems;
+        app.locals.title = app.get('title');
+        next();
+    });
+});
 
 app.use('/', routes);
 app.use('/users', users);
@@ -39,6 +58,7 @@ if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
         res.render('error', {
+            title: app.get('title'),
             message: err.message,
             error: err
         });
