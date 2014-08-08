@@ -22,7 +22,7 @@ var schema = new mongoose.Schema({
    }
 });
 
-schema.pre(save, function(next){
+schema.pre('save', function(next){
     var user = this;
     bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
         if (err) return next(err);
@@ -37,7 +37,7 @@ schema.pre(save, function(next){
     });
 });
 
-UserSchema.methods.comparePassword = function(candidatePassword, cb) {
+schema.methods.comparePassword = function(candidatePassword, cb) {
     bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
         if (err) return cb(err);
         cb(null, isMatch);
