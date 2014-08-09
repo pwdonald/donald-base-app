@@ -17,7 +17,8 @@
     "grunt-cli": "latest",
     "mongodb": "latest",
     "mongoose": "latest",
-    "bcrypt": "latest"
+    "bcrypt": "latest",
+    "express-session": "latest"
   },
   "devDependencies": {
     "grunt-nodemon": "latest",
